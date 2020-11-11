@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'news.dart';
+
 class Second extends StatefulWidget {
   @override
   _SecondState createState() => _SecondState();
@@ -16,7 +18,7 @@ class _SecondState extends State<Second> with SingleTickerProviderStateMixin {
     super.initState();
     animationController = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 250),
+      duration: Duration(milliseconds: 350),
     );
   }
 
@@ -26,7 +28,12 @@ class _SecondState extends State<Second> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    var karl = Container(color: Colors.blue);
+    var karl = Scaffold(
+      backgroundColor: Colors.blue,
+      body: SafeArea(
+        child: pall,
+      ),
+    );
 
     var ken = Container(color: Colors.yellow);
 
@@ -42,11 +49,12 @@ class _SecondState extends State<Second> with SingleTickerProviderStateMixin {
             children: <Widget>[
               karl,
               Transform(
-                  transform: Matrix4.identity()
-                    ..translate(slide)
-                    ..scale(scale),
-                  alignment: Alignment.centerLeft,
-                  child: ken),
+                transform: Matrix4.identity()
+                  ..translate(slide)
+                  ..scale(scale),
+                alignment: Alignment.centerLeft,
+                child: ken,
+              ),
             ],
           );
         },
