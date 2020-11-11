@@ -19,7 +19,7 @@ class Home extends StatelessWidget {
                 color: Colors.grey[500],
                 icon: Icon(Icons.headset_rounded),
                 onPressed: () {
-                  Navigator.pushNamed(context, '/second');
+                  Navigator.pushNamed(context, '/animate');
                 }),
           ],
         ),

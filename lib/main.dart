@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:neomophic_design/neomophics/secondarypage.dart';
+import 'neomophics/animated.dart';
 import 'neomophics/home.dart';
 import 'neomophics/land.dart';
+import 'neomophics/second.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,7 +17,8 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => Land(),
         '/home': (contex) => Home(),
-        '/second': (context) => Second(),
+        '/second': (context) => Bad(),
+        '/animate': (context) => Animate(),
       },
     );
   }
