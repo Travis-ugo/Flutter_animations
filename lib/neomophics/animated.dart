@@ -8,37 +8,39 @@ class Animate extends StatefulWidget {
 class _AnimateState extends State<Animate> with SingleTickerProviderStateMixin {
   var love = BoxDecoration(
     borderRadius: BorderRadius.all(Radius.zero),
-    color: Colors.blue,
+    color: Colors.grey[700],
   );
   bool isPlaying;
   AnimationController _animationController;
   double _height = 300;
   double _width = 300;
+  Color _luke = Colors.white;
 
   @override
   void initState() {
     super.initState();
     _animationController = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 450),
+      duration: Duration(seconds: 1),
     );
   }
 
   void _handleOnPressed() {
     setState(() {
       _height = 400;
+      _luke = Colors.grey[700];
       _width = 150;
       love = BoxDecoration(
-        color: Colors.pink[200],
+        color: Colors.white,
         boxShadow: [
           BoxShadow(
-            color: Colors.pink[100],
+            color: Colors.white,
             offset: Offset(5, 5),
             blurRadius: 15.0,
             spreadRadius: 1.0,
           ),
           BoxShadow(
-            color: Colors.pink[100],
+            color: Colors.white,
             offset: Offset(-5, -5),
             blurRadius: 15.0,
             spreadRadius: 1.0,
@@ -54,7 +56,7 @@ class _AnimateState extends State<Animate> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: _luke,
       body: Center(
         child: AnimatedContainer(
           duration: Duration(milliseconds: 400),
